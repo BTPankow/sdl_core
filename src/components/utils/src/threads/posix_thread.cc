@@ -283,6 +283,9 @@ void Thread::join() {
 }
 
 Thread::~Thread() {
+  if (delegate_) {
+    delegate_->set_thread(NULL);
+  }
   finalized_ = true;
   stopped_ = true;
   join();

@@ -86,6 +86,7 @@ int16_t TelemetryMonitor::port() const {
 
 TelemetryMonitor::~TelemetryMonitor() {
   Stop();
+  delete streamer_;
 }
 
 void TelemetryMonitor::Init(
